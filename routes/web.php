@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*  Laravel From Scratch  */
 
@@ -8,30 +9,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('products', function(){
-    return 'This page shows the list of products.';
-})->name('products.index');
+Route::get('products', [ProductController::class, 'index'])->name('products.index');
 
-Route::get('products/create', function(){
-    return 'Show the form to create a product.';
-})->name('products.create');
+Route::get('products/create', [ProductController::class, 'create'])->name('products.create');
 
-Route::post('products/{product}', function($product){
-    //
-})->name('products.store');
+Route::post('products/{product}', [ProductController::class, 'store'])->name('products.store');
 
-Route::get('products/{product}', function($product){
-    return "This is product number {$product}.";
-})->name('products.show');
+Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
-Route::get('products/{product}/edit', function($product){
-    return 'Show the form to edit product number ' . $product . '.';
-})->name('products.edit');
+Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
 
-Route::match(['put', 'patch'], 'products/{product}', function($product){
-    //
-})->name('products.update');
+Route::match(['put', 'patch'], 'products/{product}', [ProductController::class, 'update'])->name('products.update');
 
-Route::delete('products/{product}', function ($product) {
-    //
-})->name('products.destroy');
+Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');

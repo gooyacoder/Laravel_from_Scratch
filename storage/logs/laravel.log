@@ -145,3 +145,7 @@
 #46 /home/amirhosein/LaravelProjects/Laravel-from-Scratch/server.php(21): require_once('/home/amirhosei...')
 #47 {main}
 "} 
+[2021-03-07 17:18:40] local.ERROR: syntax error, unexpected '=', expecting variable (T_VARIABLE) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected '=', expecting variable (T_VARIABLE) at /home/amirhosein/LaravelProjects/Laravel-from-Scratch/app/Models/Product.php:12)
+[stacktrace]
+#0 {main}
+"} 
